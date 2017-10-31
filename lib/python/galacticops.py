@@ -96,6 +96,22 @@ def ne2001_dist_to_dm(dist, gl, gb):
                          C.byref(inpath),
                          C.byref(linpath))
 
+def ymw16_dist_to_dm(dist,gl,gb):
+    """Use YMW16 distance model."""
+    dist = C.c_double(dist) # double
+    gl = C.c_float(gl) # double
+    gb = C.c_float(gb)
+    inpath = C.create_string_buffer(cpath) # TODO: define cpath
+    linpath = C.c_int(len(cpath)) # What is this?
+    return ymw16lib.dm_(    gl,
+                            gb,
+                            dist,
+                            DM_host,
+                            C.c_int(2),
+                            C.c_int(1),
+                            C.c_int(0),
+                            C.byref(inpath),
+                            C.byref(""))
 
 def lmt85_dist_to_dm(dist, gl, gb):
     """ Use Lyne, Manchester & Taylor distance model to compute DM."""

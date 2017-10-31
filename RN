@@ -1,0 +1,34 @@
+This is my running notes.
+
+- Check out `features to add` file on the repo. They already have plans for it?
+They cited MB paper.
+- YMW16 code available ? Or should we have to codify it?
+-- KK anna used it in his latest paper. Hahahahha
+-- We have to put one Environmental variable bc of that.
+-- They are shipping an executible. I have to make an FFI for it.
+-- They worked in C and not in Fortran hence installing it requires one additional step
+| I created a so object of YMW16 like this
+| | gcc -c -fPIC *.c -lm
+| | gcc *.o -shared -o libymw16
+| I hope it works
+| export YMW16_DIR=`your directory`
+
+
+- Can we some testcases where we can test if our code is working fine and if there is a difference between original PsrPopPy
+  and our version?
+- They have a `tests` directory but it's not complete. We should think of a thorough way and complete way.
+
+- Binary systems have  entirely different cosmological circumstances which lead to their creation. So, when we are using models
+used for modeling isolated pulsars aren't we bias-ing our model?
+
+- Do you even MCMC bruh?
+
+
+Cycle 1 :
+
+- Modify YMW16 model to make it no IO and independent.
+-- Strip everything that would lead to IO.
+---- What is DM_Host? It is set to 100 as default.
+---- Account for FRB?
+---- YMW16 has Gal, Magellanic Cloud and IGM. What to do about these?
+---- NE2001 has tscat and tscint_bw. Investigate YMW doesn't have similar. Investigate.

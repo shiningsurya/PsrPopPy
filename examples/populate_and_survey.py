@@ -13,7 +13,7 @@ pop = populate.generate(1038,
                surveyList=['PMSURV'],
                radialDistType='lfl06',
                siDistPars=[-1.41, 0.96], # non-standard SI distribution
-               duty=6.,
+               duty_percent=6.,
                electronModel='lmt85',
                nostdout=True # switches off output to stdout
                )
@@ -25,4 +25,4 @@ surveyPopulations = dosurvey.run(pop, ['PMSURV'], nostdout=True)
 dosurvey.write(surveyPopulations, nores=False, summary=False, asc=False)
 
 # write out the population model, if required
-pop.write(outf="populate.model")
+pop.write_asc(outf="populate.model")

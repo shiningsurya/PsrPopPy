@@ -8,8 +8,9 @@ class OrbitException(Exception):
 class Orbit(object):
     """ Class to store an individual pulsar"""
     def __init__(self,
+                 type="NS-NS",
                  is_binary=False,
-                 orbital_period_days=None,
+                 p_orbit_days=None,
                  pulsar_mass_msolar=None,
                  companion_mass_msolar=None,
                  long_peri_degrees=None,
@@ -19,7 +20,7 @@ class Orbit(object):
 
         # is not binary by default
         self.is_binary = is_binary
-        self.orbital_period_days = orbital_period_days
+        self.p_orbit_days = p_orbit_days
 
         self.pulsar_mass_msolar = pulsar_mass_msolar
         self.companion_mass_msolar = companion_mass_msolar
